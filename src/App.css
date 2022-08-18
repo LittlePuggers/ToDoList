@@ -1,3 +1,11 @@
+body {
+  --platinum: #d8e2dcff;
+  --unbleached-silk: #ffe5d9ff;
+  --pink: #ffcad4ff;
+  --light-pink: #f4acb7ff;
+  --mountbatten-pink: #9d8189ff;
+}
+
 .App {
   text-align: center;
 }
@@ -13,15 +21,67 @@
   }
 }
 
+/* .list-item{
+  display: flex;
+  justify-content: space-evenly;
+  height: 30px;
+  width: 80%; 
+} */
+
+input{
+  margin: 0 10px;
+}
+form{
+  margin: 10px 0;
+}
+
+p{
+  margin:0;
+  padding:0;
+  width:100px;
+  text-align: left;
+}
+
+.parra {
+  margin:0;
+  padding:0;
+  width:100px;
+  text-align: left;
+  text-decoration: line-through;
+}
+
+ul{
+  padding:0;
+  margin:20px 0 0 0;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+button{
+  height:100%;
+}
+
+main{
+  width: 50%;
+  background-color: white;
+  border: var(--mountbatten-pink) 5px solid;
+  border-radius: 25px;
+  padding:50px 30px;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .App-header {
-  background-color: #282c34;
+  background-color: var(--platinum);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: var(--mountbatten-pink); */
 }
 
 .App-link {
@@ -35,4 +95,52 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.title {
+  font-family: 'Lobster';
+  color: var(--mountbatten-pink)
+}
+
+ul {
+  background-color: var(--unbleached-silk);
+  border-radius: 15px;
+  padding: 15px 0px;
+  display: flex;
+}
+
+li {
+  color: var(--mountbatten-pink);
+  margin: 5px;
+  padding: 0px 20px;
+  font-family: 'Raleway';
+  font-size: large;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li p:hover {
+  text-shadow: 2px 2px 2px #bbb;
+}
+
+li p {
+  width: 75%;
+}
+
+li button {
+  background-color: var(--unbleached-silk);
+  border: 1px solid var(--mountbatten-pink);
+  border-radius: 5px;
+  font-family: 'Roboto';
+  color: var(--mountbatten-pink);
+}
+
+form button {
+  background-color: white;
+  padding: 3px 5px;
+  border: 1px solid var(--mountbatten-pink);
+  border-radius: 5px;
+  font-family: 'Roboto';
+  color: var(--mountbatten-pink);
 }
