@@ -29,20 +29,18 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <main>
-          <div className='title'>
-            What To Do Today?
-          </div>
-          <TextInput handleAddTask={ addTask }></TextInput>
-          <ul>
-            {listaTareas.map(( tarea , index)=>{
-              return <Tareas handleDelete={ deleteTask } tarea={tarea} key={index} index={index}></Tareas>
-            })}
-          </ul>
-        </main>
-      </header>
+    <div className="main-container">
+      <main>
+        <div className='title'>
+          What To Do Today?
+        </div>
+        <TextInput handleAddTask={ addTask }></TextInput>
+        <ul>
+          {listaTareas.map(( tarea , index)=>{
+            return <Tareas handleDelete={ deleteTask } tarea={tarea} key={index} index={index}></Tareas>
+          })}
+        </ul>
+      </main>
     </div>
   );
 }

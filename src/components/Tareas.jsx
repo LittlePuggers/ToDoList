@@ -1,16 +1,21 @@
 import { useState } from 'react'
 
+
 function Tareas({ tarea , handleDelete , index }) {
     
-    const [ tachada , setTachada] = useState('');
+    const [ tachada , setTachada] = useState(false);
 
     function handleTachada(){
-        setTachada(prev => prev ? '' : 'parra')
+        setTachada(prev => !prev )
     }
 
-
     return (
-        <li className='list-item'><p onClick={handleTachada} className={tachada}>{tarea}</p><button onClick={()=> handleDelete(index)}>Delete</button></li>
+        <div>
+            <li className='list-item'>
+                <p onClick={()=>handleTachada()} className={tachada ? 'todo done' : 'todo'}>{tarea}</p>
+                <button onClick={() => handleDelete(index)}>Delete</button>
+            </li>
+        </div>
     )
 }
 
