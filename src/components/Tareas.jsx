@@ -12,7 +12,6 @@ function Tareas({ tarea , handleDelete , index }) {
     return (
         <div>
             <li className='list-item'>
-            
                 <p onClick={()=>handleTachada()} className={tachada ? 'todo done' : 'todo'}>{tarea}</p>
                 <button onClick={() => handleDelete(index)}>Delete</button>
             </li>
