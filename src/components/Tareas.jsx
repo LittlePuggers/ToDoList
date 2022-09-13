@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import DeleteIcon from '@mui/icons-material/DeleteOutlined'
 
 
 function Tareas({ tarea , handleDelete , index }) {
@@ -11,9 +12,9 @@ function Tareas({ tarea , handleDelete , index }) {
 
     return (
         <div>
-            <li className='list-item'>
+           <li className='list-item'>
                 <p onClick={()=>handleTachada()} className={tachada ? 'todo done' : 'todo'}>{tarea}</p>
-                <button onClick={() => handleDelete(index)}>Delete</button>
+                <DeleteIcon sx={{color:'#9d8189ff'}} fontSize='small' onClick={() => handleDelete(index)}></DeleteIcon>
             </li>
         </div>
     )

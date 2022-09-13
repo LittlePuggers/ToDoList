@@ -11,11 +11,10 @@ function App() {
     'Hacer la comida'
   ])
   
-  function addTask(e){
-    e.preventDefault();
-    if(e.target.newtask.value){
+  function addTask(task){
+    if(task){
       setListaTareas((prev)=>{
-        return ([...prev, e.target.newtask.value])
+        return ([...prev, task])
       })
     }
   }
