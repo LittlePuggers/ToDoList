@@ -5,10 +5,7 @@ import { useState } from 'react'
 
 function App() {
   const [ listaTareas, setListaTareas ] = useState([
-    'Hacer ejercicio',
-    'Limpiar el cuarto',
-    'Estudiar CSS',
-    'Hacer la comida'
+    'Hacer ejercicio'
   ])
   
   function addTask(task){
