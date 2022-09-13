@@ -5,12 +5,17 @@ export default function TextInput({ handleAddTask }){
 
     const [userInput, setUserInput] = useState('')
 
+    function handleInput() {
+        handleAddTask(userInput)
+        setUserInput('')
+    }
+
     return(
         <div className='text-input'>
             <div className='form'>
-                <input type='text' onChange={(e)=>setUserInput(e.target.value)}/>
+                <input value={userInput} type='text' onChange={(e)=>setUserInput(e.target.value)}/>
                 <AddCircleOutlineOutlinedIcon sx={{ color:'#9d8189ff'}}
-                 onClick={() => handleAddTask(userInput)}
+                 onClick={() => handleInput()}
                 />
             </div>
         </div>
