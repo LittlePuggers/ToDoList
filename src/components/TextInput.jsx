@@ -6,7 +6,8 @@ export default function TextInput({ handleAddTask }){
     const [userInput, setUserInput] = useState('')
 
     function handleInput() {
-        handleAddTask(userInput)
+        if(!userInput) {return}
+        handleAddTask({text: userInput, tachada: false})
         setUserInput('')
     }
 

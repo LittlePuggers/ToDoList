@@ -2,10 +2,12 @@ import './App.css';
 import TextInput from './components/TextInput';
 import Tareas from './components/Tareas'
 import { useState } from 'react'
+import { v4 as uuid } from 'uuid'
 
 function App() {
   const [ listaTareas, setListaTareas ] = useState([
-    'Hacer ejercicio'
+    {text: 'Hacer ejercicio', 
+    tachada: false},
   ])
   
   function addTask(task){
@@ -24,6 +26,16 @@ function App() {
     })
   }
 
+  function handleTachada(index){
+    setListaTareas((prev)=>{
+      let newArr = [...prev]
+      let newObj = newArr[index]
+      newArr.splice(index, 1, {...newObj, tachada: !newObj.tachada})
+      return newArr
+    })
+    
+  }
+
   return (
     <div className="main-container">
       <main>
@@ -32,8 +44,9 @@ function App() {
         </div>
         <TextInput handleAddTask={ addTask }></TextInput>
         <ul>
-          {listaTareas.map(( tarea , index)=>{
-            return <Tareas handleDelete={ deleteTask } tarea={tarea} key={index} index={index}></Tareas>
+          {listaTareas.map(( tarea, index )=>{
+            const id = uuid()
+            return <Tareas handleTachada={handleTachada} handleDelete={ deleteTask } tarea={tarea} key={id} index={index}></Tareas>
           })}
         </ul>
       </main>
